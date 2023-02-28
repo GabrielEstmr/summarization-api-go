@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mp-indicator-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: mp-indicator-db
+  template:
+    metadata:
+      labels:
+        component: mp-indicator-db
+    spec:
+      volumes:
+        - name: mp-indicator-mongo-persistent-volume-claim
+          persistentVolumeClaim:
+            claimName: mp-indicator-mongo-persistent-volume-claim
+      containers:
+      - name: mongo
+        env:
+          - name: MONGO_DATA_DIR
+            value: /var/lib/mongodb/data
+          - name: MONGO_INITDB_DATABASE
+            value: mp-indicator
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: MP_INDICATOR_MONGO_INITDB_ROOT_USERNAME
+                name: mp-cluster-secrets
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: MP_INDICATOR_MONGO_INITDB_ROOT_PASSWORD
+                name: mp-cluster-secrets
+        image: mongo
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+          - containerPort: 27017
+        volumeMounts:
+          - mountPath: /var/lib/mongodb/data
+            name: mp-indicator-mongo-persistent-volume-claim

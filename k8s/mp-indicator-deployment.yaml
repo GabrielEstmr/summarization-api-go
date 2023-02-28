@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mp-indicator-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: mp-indicator
+  template:
+    metadata:
+      labels:
+        component: mp-indicator
+    spec:
+      containers:
+      - name: mp-indicator
+        image: gabrielestmr/mp-indicator-go:alpha4
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: MP_INDICATOR_MONGO_INITDB_ROOT_USERNAME
+                name: mp-cluster-secrets
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: MP_INDICATOR_MONGO_INITDB_ROOT_PASSWORD
+                name: mp-cluster-secrets
+          - name: DB_MONGO_HOST
+            value: mp-indicator-mongo-cluster-ip-service
+          - name: DB_MONGO_PORT
+            value: "27017"
+            
+          - name: KAFKA_HOST
+            value: kafka-service
+          - name: KAFKA_PORT
+            value: "9092"
+          - name: KAFKA_GROUP_ID
+            value: mp-indicator
+
+          - name: RABBITMQ_USER
+            valueFrom:
+              secretKeyRef:
+                key: MP_INDICATOR_RABBITMQ_USER
+                name: mp-cluster-secrets
+          - name: RABBITMQ_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: MP_INDICATOR_RABBITMQ_PASSWORD
+                name: mp-cluster-secrets
+          - name: RABBITMQ_HOST
+            value: rabbitmq
+            # namespace: rabbitmq-cluster
+          - name: RABBITMQ_PORT
+            value: "5672"
+          - name: RABBITMQ_DEFAULT_VHOST
+            value: dev01_mktplace
+
+          - name: INTEGRATION_MP_ORDER_SEARCH_URL
+            value: "https://mkt-ingress-prd.luizalabs.com/"
+
+          - name: REDIS_HOST
+            value: redis-mp-indicator-cluster-ip-service
+          - name: REDIS_PORT
+            value: "6379"
+
+          - name: ZIPKIN_HOST
+            value: "http://localhost"
+          - name: ZIPKIN_PORT
+            value: "9411"
+
+          - name: MP_INDICATOR_APPLICATION_PROFILE
+            value: PRD
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 8080

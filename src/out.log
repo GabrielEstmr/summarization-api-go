@@ -1,0 +1,27 @@
+{"@timestamp":"2023-02-27T07:45:50-03:00","log.level":"info","message":"User logged in!","userId":12}
+{"@timestamp":"2023-02-27T07:45:51-03:00","log.level":"error","message":"config request failed: sending config request failed: Get \"http://localhost:8200/config/v1/agents?service.name=___go_build_mpindicator\": dial tcp 127.0.0.1:8200: connect: connection refused"}
+{"@timestamp":"2023-02-27T07:46:20-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:46:20-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~0s)"}
+{"@timestamp":"2023-02-27T07:46:28-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~1s)"}
+{"@timestamp":"2023-02-27T07:46:30-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~4s)"}
+{"@timestamp":"2023-02-27T07:46:34-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~9s)"}
+{"@timestamp":"2023-02-27T07:46:44-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~16s)"}
+{"@timestamp":"2023-02-27T07:46:50-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:47:05-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~25s)"}
+{"@timestamp":"2023-02-27T07:47:20-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:47:45-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~36s)"}
+{"@timestamp":"2023-02-27T07:47:50-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:48:20-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:48:26-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~36s)"}
+{"@timestamp":"2023-02-27T07:48:50-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:49:03-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~36s)"}
+{"@timestamp":"2023-02-27T07:49:20-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:49:42-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~36s)"}
+{"@timestamp":"2023-02-27T07:49:50-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:50:20-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:50:22-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~36s)"}
+{"@timestamp":"2023-02-27T07:50:50-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:50:51-03:00","log.level":"error","message":"config request failed: sending config request failed: Get \"http://localhost:8200/config/v1/agents?service.name=___go_build_mpindicator\": dial tcp 127.0.0.1:8200: connect: connection refused"}
+{"@timestamp":"2023-02-27T07:50:56-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~36s)"}
+{"@timestamp":"2023-02-27T07:51:20-03:00","log.level":"debug","message":"gathering metrics"}
+{"@timestamp":"2023-02-27T07:51:32-03:00","log.level":"debug","message":"request failed: sending event request failed: Post \"http://localhost:8200/intake/v2/events\": dial tcp 127.0.0.1:8200: connect: connection refused (next request in ~36s)"}
