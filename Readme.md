@@ -1,4 +1,4 @@
-# Mp-Indicator-Go:
+# APi-Summarization-Indicator-Go:
 
 ## Main Goals:
 
